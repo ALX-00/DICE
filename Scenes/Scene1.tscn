@@ -1,0 +1,111 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Scenes/AnimatedSprite.gd" type="Script" id=1]
+[ext_resource path="res://Animations/protag0033.png" type="Texture" id=2]
+[ext_resource path="res://Animations/protag0031.png" type="Texture" id=3]
+[ext_resource path="res://Animations/Anim00_00004.png" type="Texture" id=4]
+[ext_resource path="res://Animations/protag0036.png" type="Texture" id=5]
+[ext_resource path="res://Animations/Anim01_00006.png" type="Texture" id=6]
+[ext_resource path="res://Animations/protag0034.png" type="Texture" id=7]
+[ext_resource path="res://Animations/Anim04_00006.png" type="Texture" id=8]
+[ext_resource path="res://Animations/Anim04_00004.png" type="Texture" id=9]
+[ext_resource path="res://Animations/Anim04_00002.png" type="Texture" id=10]
+[ext_resource path="res://Animations/Anim03_00004.png" type="Texture" id=11]
+[ext_resource path="res://Animations/Anim03_00006.png" type="Texture" id=12]
+[ext_resource path="res://Animations/protag0035.png" type="Texture" id=13]
+[ext_resource path="res://Animations/protag0032.png" type="Texture" id=14]
+[ext_resource path="res://Animations/protag0030.png" type="Texture" id=15]
+[ext_resource path="res://Animations/Anim03_00002.png" type="Texture" id=16]
+[ext_resource path="res://Animations/Anim02_00006.png" type="Texture" id=17]
+[ext_resource path="res://Animations/Anim01_00002.png" type="Texture" id=21]
+[ext_resource path="res://Animations/Anim02_00004.png" type="Texture" id=27]
+[ext_resource path="res://Animations/Anim02_00002.png" type="Texture" id=28]
+[ext_resource path="res://Animations/Anim01_00004.png" type="Texture" id=30]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 30 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Door",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Window",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Static",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 27 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "Bed",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Desk",
+"speed": 6.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 3 ), ExtResource( 14 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[node name="Scene1" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 960.424, 542.78 )
+frames = SubResource( 1 )
+animation = "Static"
+playing = true
+script = ExtResource( 1 )
+
+[node name="Area_window" type="Area2D" parent="AnimatedSprite"]
+
+[node name="Window_collider" type="CollisionPolygon2D" parent="AnimatedSprite/Area_window"]
+position = Vector2( -960.424, -542.78 )
+polygon = PoolVector2Array( 618.872, 203.863, 618.123, 496.033, 1046.64, 496.033, 1050.38, 205.361 )
+
+[node name="Area_door" type="Area2D" parent="AnimatedSprite"]
+
+[node name="Door_collider" type="CollisionPolygon2D" parent="AnimatedSprite/Area_door"]
+position = Vector2( -960.424, -542.78 )
+polygon = PoolVector2Array( 50.7929, 419.195, 219.63, 309.275, 229.75, 818.625, 56.3396, 1018.15 )
+
+[node name="Area_bed" type="Area2D" parent="AnimatedSprite"]
+
+[node name="Bed_collider" type="CollisionPolygon2D" parent="AnimatedSprite/Area_bed"]
+polygon = PoolVector2Array( -354.997, 103.993, -72.3766, 107.37, 15.9175, 97.2797, 76.8824, 107.37, 87.9077, 193.131, 29.925, 289.297, -117.328, 344.727, -503.455, 322.277, -467.25, 207.337 )
+
+[node name="Area_desk" type="Area2D" parent="AnimatedSprite"]
+position = Vector2( -960.424, -542.78 )
+
+[node name="Desk_collider" type="CollisionPolygon2D" parent="AnimatedSprite/Area_desk"]
+polygon = PoolVector2Array( 1390.72, 925.107, 1382.25, 658.11, 1347, 658.123, 1354.57, 641.725, 1494.57, 617.339, 1597.59, 614.396, 1593.8, 476.489, 1834.66, 449.567, 1835.56, 620.703, 1914.54, 624.474, 1915.44, 653.077, 1880.9, 663.996, 1880.9, 939.81, 1736.58, 1036.43, 1733.76, 806.619, 1552.98, 803.194, 1550.49, 874.233 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 1165.15, 704.806 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
+polygon = PoolVector2Array( 1042.57, 1086.89, 1050.12, 917.941, 1023.7, 892.457, 993, 793, 1031.25, 553.606, 1094.49, 500.749, 1066.17, 388.428, 1125.63, 328.02, 1195.48, 328.964, 1260.61, 389.372, 1224.74, 500.749, 1293.64, 568.708, 1317.24, 793.35, 1298.36, 894.344, 1265.33, 917.941, 1269.1, 1084.06 )
+
+[connection signal="mouse_entered" from="AnimatedSprite/Area_window" to="AnimatedSprite" method="_on_Area_window_mouse_entered"]
+[connection signal="mouse_exited" from="AnimatedSprite/Area_window" to="AnimatedSprite" method="_on_Area_window_mouse_exited"]
+[connection signal="mouse_entered" from="AnimatedSprite/Area_door" to="AnimatedSprite" method="_on_Area_door_mouse_entered"]
+[connection signal="mouse_exited" from="AnimatedSprite/Area_door" to="AnimatedSprite" method="_on_Area_door_mouse_exited"]
+[connection signal="mouse_entered" from="AnimatedSprite/Area_bed" to="AnimatedSprite" method="_on_Area_bed_mouse_entered"]
+[connection signal="mouse_exited" from="AnimatedSprite/Area_bed" to="AnimatedSprite" method="_on_Area_bed_mouse_exited"]
+[connection signal="mouse_entered" from="AnimatedSprite/Area_desk" to="AnimatedSprite" method="_on_Area_desk_mouse_entered"]
+[connection signal="mouse_exited" from="AnimatedSprite/Area_desk" to="AnimatedSprite" method="_on_Area_desk_mouse_exited"]
