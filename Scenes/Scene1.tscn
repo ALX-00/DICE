@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://Scenes/AnimatedSprite.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/AnimatedSprite.gd" type="Script" id=1]
 [ext_resource path="res://Animations/protag0033.png" type="Texture" id=2]
 [ext_resource path="res://Animations/protag0031.png" type="Texture" id=3]
 [ext_resource path="res://Animations/Anim00_00004.png" type="Texture" id=4]
@@ -24,11 +24,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 21 ), ExtResource( 30 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "Door",
-"speed": 6.0
-}, {
 "frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "Window",
@@ -47,6 +42,11 @@ animations = [ {
 "frames": [ ExtResource( 16 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "Desk",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 30 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Door",
 "speed": 6.0
 } ]
 
@@ -95,7 +95,7 @@ polygon = PoolVector2Array( 1390.72, 925.107, 1382.25, 658.11, 1347, 658.123, 13
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 position = Vector2( 1165.15, 704.806 )
 frames = SubResource( 2 )
-frame = 1
+frame = 6
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
