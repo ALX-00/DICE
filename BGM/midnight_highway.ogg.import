@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/midnight_highway.ogg-809106517da5ba7e8cf91f02ede473ba.oggstr"
+
+[deps]
+
+source_file="res://BGM/midnight_highway.ogg"
+dest_files=[ "res://.import/midnight_highway.ogg-809106517da5ba7e8cf91f02ede473ba.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

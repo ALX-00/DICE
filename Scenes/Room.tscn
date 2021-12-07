@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/AnimatedSprite.gd" type="Script" id=1]
 [ext_resource path="res://Animations/Anim00_00004.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Animations/Anim04_00004.png" type="Texture" id=19]
 [ext_resource path="res://Animations/Anim04_00006.png" type="Texture" id=20]
 [ext_resource path="res://Animations/protag0031.png" type="Texture" id=21]
+[ext_resource path="res://BGM/night_city_sounds.ogg" type="AudioStream" id=22]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -28,16 +29,6 @@ animations = [ {
 "loop": true,
 "name": "Static",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "Bed",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Desk",
-"speed": 6.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 3 ), ExtResource( 18 ) ],
 "loop": true,
@@ -47,6 +38,16 @@ animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "Window",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Desk",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Bed",
 "speed": 6.0
 } ]
 
@@ -58,7 +59,7 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[node name="Scene1" type="Node2D"]
+[node name="Room" type="Node2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 960.424, 542.78 )
@@ -95,17 +96,27 @@ polygon = PoolVector2Array( 1390.72, 925.107, 1382.25, 658.11, 1347, 658.123, 13
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 position = Vector2( 1165.15, 704.806 )
 frames = SubResource( 2 )
-frame = 6
+frame = 3
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
 polygon = PoolVector2Array( 1042.57, 1086.89, 1050.12, 917.941, 1023.7, 892.457, 993, 793, 1031.25, 553.606, 1094.49, 500.749, 1066.17, 388.428, 1125.63, 328.02, 1195.48, 328.964, 1260.61, 389.372, 1224.74, 500.749, 1293.64, 568.708, 1317.24, 793.35, 1298.36, 894.344, 1265.33, 917.941, 1269.1, 1084.06 )
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 839.58, 264.004 )
+stream = ExtResource( 22 )
+volume_db = -5.676
+autoplay = true
+
+[connection signal="input_event" from="AnimatedSprite/Area_window" to="AnimatedSprite" method="windowIsClicked"]
 [connection signal="mouse_entered" from="AnimatedSprite/Area_window" to="AnimatedSprite" method="_on_Area_window_mouse_entered"]
 [connection signal="mouse_exited" from="AnimatedSprite/Area_window" to="AnimatedSprite" method="_on_Area_window_mouse_exited"]
+[connection signal="input_event" from="AnimatedSprite/Area_door" to="AnimatedSprite" method="DoorIsClicked"]
 [connection signal="mouse_entered" from="AnimatedSprite/Area_door" to="AnimatedSprite" method="_on_Area_door_mouse_entered"]
 [connection signal="mouse_exited" from="AnimatedSprite/Area_door" to="AnimatedSprite" method="_on_Area_door_mouse_exited"]
+[connection signal="input_event" from="AnimatedSprite/Area_bed" to="AnimatedSprite" method="BedIsClicked"]
 [connection signal="mouse_entered" from="AnimatedSprite/Area_bed" to="AnimatedSprite" method="_on_Area_bed_mouse_entered"]
 [connection signal="mouse_exited" from="AnimatedSprite/Area_bed" to="AnimatedSprite" method="_on_Area_bed_mouse_exited"]
+[connection signal="input_event" from="AnimatedSprite/Area_desk" to="AnimatedSprite" method="DeskIsClicked"]
 [connection signal="mouse_entered" from="AnimatedSprite/Area_desk" to="AnimatedSprite" method="_on_Area_desk_mouse_entered"]
 [connection signal="mouse_exited" from="AnimatedSprite/Area_desk" to="AnimatedSprite" method="_on_Area_desk_mouse_exited"]

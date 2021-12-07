@@ -30,10 +30,10 @@
 [ext_resource path="res://Animations/*-22.png" type="Texture" id=28]
 [ext_resource path="res://Animations/*-29.png" type="Texture" id=29]
 [ext_resource path="res://Animations/*-5.png" type="Texture" id=30]
-[ext_resource path="res://Scenes/RollTheDice.gd" type="Script" id=31]
+[ext_resource path="res://RollTheDice.gd" type="Script" id=31]
 [ext_resource path="res://Animations/newGame-0.png" type="Texture" id=32]
 [ext_resource path="res://Animations/newGame-1.png" type="Texture" id=33]
-[ext_resource path="res://Scenes/NewGame.gd" type="Script" id=34]
+[ext_resource path="res://Scripts/NewGame.gd" type="Script" id=34]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -102,7 +102,7 @@ __meta__ = {
 }
 
 [connection signal="button_down" from="Panel/NewGame/DiceRoll/TextureButton" to="Panel/NewGame" method="_on_TextureButton_button_down"]
-[connection signal="mouse_entered" from="Panel/NewGame/DiceRoll/TextureButton" to="Panel/NewGame/DiceRoll" method="_on_TextureButton_mouse_entered"]
 [connection signal="mouse_entered" from="Panel/NewGame/DiceRoll/TextureButton" to="Panel/NewGame" method="_on_TextureButton_mouse_entered"]
-[connection signal="mouse_exited" from="Panel/NewGame/DiceRoll/TextureButton" to="Panel/NewGame/DiceRoll" method="_on_TextureButton_mouse_exited"]
+[connection signal="mouse_entered" from="Panel/NewGame/DiceRoll/TextureButton" to="Panel/NewGame/DiceRoll" method="_on_TextureButton_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/NewGame/DiceRoll/TextureButton" to="Panel/NewGame" method="_on_TextureButton_mouse_exited"]
+[connection signal="mouse_exited" from="Panel/NewGame/DiceRoll/TextureButton" to="Panel/NewGame/DiceRoll" method="_on_TextureButton_mouse_exited"]

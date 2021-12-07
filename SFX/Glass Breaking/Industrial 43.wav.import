@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Industrial 43.wav-5d4e9ab51723d82c8b27614364b33c0d.sample"
+
+[deps]
+
+source_file="res://SFX/Glass Breaking/Industrial 43.wav"
+dest_files=[ "res://.import/Industrial 43.wav-5d4e9ab51723d82c8b27614364b33c0d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dreading_ambient.ogg-5cedda46cd9e47c30ae6f0273f663190.oggstr"
+
+[deps]
+
+source_file="res://BGM/dreading_ambient.ogg"
+dest_files=[ "res://.import/dreading_ambient.ogg-5cedda46cd9e47c30ae6f0273f663190.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

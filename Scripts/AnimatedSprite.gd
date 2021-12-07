@@ -15,7 +15,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
 func _on_Area_window_mouse_entered():
 	animation = "Window"
 	pass # Replace with function body.
@@ -53,4 +52,27 @@ func _on_Area_desk_mouse_entered():
 
 func _on_Area_desk_mouse_exited():
 	animation = "Static"
+	pass # Replace with function body.
+
+func windowIsClicked(viewport, event, shape_idx):
+	if (event is InputEventMouseButton && event.pressed):
+		get_tree().change_scene("res://Scenes/PlaceHolder.tscn")
+	pass # Replace with function body.
+
+
+func DoorIsClicked(viewport, event, shape_idx):
+	if (event is InputEventMouseButton && event.pressed):
+		get_tree().change_scene("res://Scenes/PlaceHolder.tscn")
+	pass # Replace with function body.
+
+
+func BedIsClicked(viewport, event, shape_idx):
+	if (event is InputEventMouseButton && event.pressed):
+		get_tree().change_scene("res://Scenes/PlaceHolder.tscn")
+	pass # Replace with function body.
+
+
+func DeskIsClicked(viewport, event, shape_idx):
+	if (event is InputEventMouseButton && event.pressed):
+		get_tree().change_scene("res://Scenes/Dark_room.tscn")
 	pass # Replace with function body.
