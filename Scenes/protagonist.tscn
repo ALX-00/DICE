@@ -1,0 +1,30 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Animations/protag0032.png" type="Texture" id=1]
+[ext_resource path="res://Animations/protag0035.png" type="Texture" id=2]
+[ext_resource path="res://Animations/protag0036.png" type="Texture" id=3]
+[ext_resource path="res://Animations/protag0030.png" type="Texture" id=4]
+[ext_resource path="res://Animations/protag0034.png" type="Texture" id=5]
+[ext_resource path="res://Animations/protag0031.png" type="Texture" id=6]
+[ext_resource path="res://Animations/protag0033.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[node name="Protag" type="Node2D"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 1165.15, 704.806 )
+frames = SubResource( 1 )
+frame = 3
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
+polygon = PoolVector2Array( 1042.57, 1086.89, 1050.12, 917.941, 1023.7, 892.457, 993, 793, 1031.25, 553.606, 1094.49, 500.749, 1066.17, 388.428, 1125.63, 328.02, 1195.48, 328.964, 1260.61, 389.372, 1224.74, 500.749, 1293.64, 568.708, 1317.24, 793.35, 1298.36, 894.344, 1265.33, 917.941, 1269.1, 1084.06 )
