@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Animations/*-1.png" type="Texture" id=1]
 [ext_resource path="res://Animations/*-6.png" type="Texture" id=2]
@@ -34,6 +34,19 @@
 [ext_resource path="res://Animations/newGame-0.png" type="Texture" id=32]
 [ext_resource path="res://Animations/newGame-1.png" type="Texture" id=33]
 [ext_resource path="res://Scripts/NewGame.gd" type="Script" id=34]
+[ext_resource path="res://Animations/options-0.png" type="Texture" id=35]
+[ext_resource path="res://Animations/options-1.png" type="Texture" id=36]
+[ext_resource path="res://Animations/cog00008.png" type="Texture" id=37]
+[ext_resource path="res://Animations/cog00007.png" type="Texture" id=38]
+[ext_resource path="res://Animations/cog00003.png" type="Texture" id=39]
+[ext_resource path="res://Animations/cog00000.png" type="Texture" id=40]
+[ext_resource path="res://Animations/cog00001.png" type="Texture" id=41]
+[ext_resource path="res://Animations/cog00006.png" type="Texture" id=42]
+[ext_resource path="res://Animations/cog00004.png" type="Texture" id=43]
+[ext_resource path="res://Animations/cog00005.png" type="Texture" id=44]
+[ext_resource path="res://Animations/cog00002.png" type="Texture" id=45]
+[ext_resource path="res://Scenes/Options.gd" type="Script" id=46]
+[ext_resource path="res://Scenes/wrench.gd" type="Script" id=47]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -59,6 +72,32 @@ animations = [ {
 "loop": true,
 "name": "roll",
 "speed": 30.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 36 ) ],
+"loop": true,
+"name": "On",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ) ],
+"loop": true,
+"name": "Off",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 40 ), ExtResource( 41 ), ExtResource( 45 ), ExtResource( 39 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 37 ) ],
+"loop": true,
+"name": "On",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 40 ) ],
+"loop": true,
+"name": "Off",
+"speed": 5.0
 } ]
 
 [node name="MainMenu" type="Control"]
@@ -101,8 +140,41 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Options" type="AnimatedSprite" parent="Panel"]
+position = Vector2( 690, 444 )
+scale = Vector2( 0.348042, 0.28218 )
+frames = SubResource( 3 )
+animation = "Off"
+playing = true
+script = ExtResource( 46 )
+
+[node name="wrench" type="AnimatedSprite" parent="Panel/Options"]
+position = Vector2( 1192.38, -46.0699 )
+scale = Vector2( 2.08463, 2.57119 )
+frames = SubResource( 4 )
+animation = "Off"
+playing = true
+script = ExtResource( 47 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="Panel/Options/wrench"]
+margin_left = -1101.0
+margin_top = -83.0
+margin_right = 88.0
+margin_bottom = 81.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="button_down" from="Panel/NewGame/DiceRoll/TextureButton" to="Panel/NewGame" method="_on_TextureButton_button_down"]
 [connection signal="mouse_entered" from="Panel/NewGame/DiceRoll/TextureButton" to="Panel/NewGame" method="_on_TextureButton_mouse_entered"]
 [connection signal="mouse_entered" from="Panel/NewGame/DiceRoll/TextureButton" to="Panel/NewGame/DiceRoll" method="_on_TextureButton_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/NewGame/DiceRoll/TextureButton" to="Panel/NewGame" method="_on_TextureButton_mouse_exited"]
 [connection signal="mouse_exited" from="Panel/NewGame/DiceRoll/TextureButton" to="Panel/NewGame/DiceRoll" method="_on_TextureButton_mouse_exited"]
+[connection signal="button_down" from="Panel/Options/wrench/TextureButton" to="Panel/Options" method="_on_TextureButton_button_down"]
+[connection signal="mouse_entered" from="Panel/Options/wrench/TextureButton" to="Panel/Options" method="_on_TextureButton_mouse_entered"]
+[connection signal="mouse_entered" from="Panel/Options/wrench/TextureButton" to="Panel/Options/wrench" method="_on_TextureButton_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Options/wrench/TextureButton" to="Panel/Options" method="_on_TextureButton_mouse_exited"]
+[connection signal="mouse_exited" from="Panel/Options/wrench/TextureButton" to="Panel/Options/wrench" method="_on_TextureButton_mouse_exited"]
