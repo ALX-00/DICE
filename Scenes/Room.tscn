@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/AnimatedSprite.gd" type="Script" id=1]
 [ext_resource path="res://Animations/Anim00_00004.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Animations/Anim04_00002.png" type="Texture" id=7]
 [ext_resource path="res://Animations/Anim03_00004.png" type="Texture" id=8]
 [ext_resource path="res://Animations/Anim03_00006.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/mindBox.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Animations/Anim03_00002.png" type="Texture" id=12]
 [ext_resource path="res://Animations/Anim01_00002.png" type="Texture" id=13]
 [ext_resource path="res://Animations/Anim02_00004.png" type="Texture" id=14]
@@ -20,9 +21,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 3 ), ExtResource( 18 ) ],
 "loop": true,
-"name": "Desk",
+"name": "Door",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Bed",
 "speed": 6.0
 }, {
 "frames": [ ExtResource( 2 ) ],
@@ -35,14 +41,9 @@ animations = [ {
 "name": "Window",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 3 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "Door",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "Bed",
+"name": "Desk",
 "speed": 6.0
 } ]
 
@@ -87,9 +88,19 @@ autoplay = true
 [node name="Protag" parent="." instance=ExtResource( 5 )]
 
 [node name="DialogBox" parent="." instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 0, 6 )
+
+[node name="mindBox" parent="." instance=ExtResource( 10 )]
+visible = false
+position = Vector2( -376, -215 )
+
+[node name="AnimatedSprite" parent="mindBox/Area2D" index="1"]
+script = null
 
 [connection signal="input_event" from="AnimatedSprite/Area_window" to="AnimatedSprite" method="windowIsClicked"]
 [connection signal="mouse_entered" from="AnimatedSprite/Area_window" to="AnimatedSprite" method="_on_Area_window_mouse_entered"]
+[connection signal="mouse_entered" from="AnimatedSprite/Area_window" to="mindBox/Area2D/AnimatedSprite" method="_on_Area_window_mouse_entered"]
 [connection signal="mouse_exited" from="AnimatedSprite/Area_window" to="AnimatedSprite" method="_on_Area_window_mouse_exited"]
 [connection signal="input_event" from="AnimatedSprite/Area_door" to="AnimatedSprite" method="DoorIsClicked"]
 [connection signal="mouse_entered" from="AnimatedSprite/Area_door" to="AnimatedSprite" method="_on_Area_door_mouse_entered"]
@@ -102,3 +113,4 @@ autoplay = true
 [connection signal="mouse_exited" from="AnimatedSprite/Area_desk" to="AnimatedSprite" method="_on_Area_desk_mouse_exited"]
 
 [editable path="DialogBox"]
+[editable path="mindBox"]

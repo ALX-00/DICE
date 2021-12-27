@@ -30,7 +30,7 @@
 [ext_resource path="res://Animations/*-22.png" type="Texture" id=28]
 [ext_resource path="res://Animations/*-29.png" type="Texture" id=29]
 [ext_resource path="res://Animations/*-5.png" type="Texture" id=30]
-[ext_resource path="res://RollTheDice.gd" type="Script" id=31]
+[ext_resource path="res://Scripts/RollTheDice.gd" type="Script" id=31]
 [ext_resource path="res://Animations/newGame-0.png" type="Texture" id=32]
 [ext_resource path="res://Animations/newGame-1.png" type="Texture" id=33]
 [ext_resource path="res://Scripts/NewGame.gd" type="Script" id=34]
@@ -45,8 +45,8 @@
 [ext_resource path="res://Animations/cog00004.png" type="Texture" id=43]
 [ext_resource path="res://Animations/cog00005.png" type="Texture" id=44]
 [ext_resource path="res://Animations/cog00002.png" type="Texture" id=45]
-[ext_resource path="res://Scenes/Options.gd" type="Script" id=46]
-[ext_resource path="res://Scenes/wrench.gd" type="Script" id=47]
+[ext_resource path="res://Scripts/Options.gd" type="Script" id=46]
+[ext_resource path="res://Scripts/wrench.gd" type="Script" id=47]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
