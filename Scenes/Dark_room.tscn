@@ -79,7 +79,7 @@ animations = [ {
 position = Vector2( 961.164, 545.029 )
 frames = SubResource( 1 )
 animation = "screen_glow"
-frame = 10
+frame = 2
 playing = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -92,7 +92,6 @@ position = Vector2( 316, 8 )
 
 [node name="AnimatedSprite" parent="Protag/KinematicBody2D" index="0"]
 material = ExtResource( 63 )
-frame = 5
 
 [node name="Dialog" parent="." instance=ExtResource( 64 )]
 position = Vector2( -2, 2 )
