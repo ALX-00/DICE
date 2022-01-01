@@ -21,16 +21,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 13 ), ExtResource( 3 ), ExtResource( 18 ) ],
-"loop": true,
-"name": "Door",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "Bed",
-"speed": 6.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "Static",
@@ -41,9 +31,19 @@ animations = [ {
 "name": "Window",
 "speed": 6.0
 }, {
+"frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Bed",
+"speed": 6.0
+}, {
 "frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "Desk",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 3 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "Door",
 "speed": 6.0
 } ]
 
@@ -92,11 +92,7 @@ visible = false
 position = Vector2( 0, 6 )
 
 [node name="mindBox" parent="." instance=ExtResource( 10 )]
-visible = false
-position = Vector2( -376, -215 )
-
-[node name="AnimatedSprite" parent="mindBox/Area2D" index="1"]
-script = null
+position = Vector2( -371, -314 )
 
 [connection signal="input_event" from="AnimatedSprite/Area_window" to="AnimatedSprite" method="windowIsClicked"]
 [connection signal="mouse_entered" from="AnimatedSprite/Area_window" to="AnimatedSprite" method="_on_Area_window_mouse_entered"]
@@ -113,4 +109,3 @@ script = null
 [connection signal="mouse_exited" from="AnimatedSprite/Area_desk" to="AnimatedSprite" method="_on_Area_desk_mouse_exited"]
 
 [editable path="DialogBox"]
-[editable path="mindBox"]

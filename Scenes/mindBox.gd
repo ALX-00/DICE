@@ -1,7 +1,7 @@
-extends AnimatedSprite
+extends Node2D
 const LoadTextFile = preload("res://Scripts/LoadTextFile.gd")
 
-onready var dialogText = get_node("Label")
+onready var dialogText = get_node("Area2D/AnimatedSprite/Label")
 onready var textArray
 onready var count = 0
 onready var textLoader = LoadTextFile.new()
