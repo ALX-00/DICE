@@ -62,7 +62,7 @@
 [ext_resource path="res://Animations/dark_room_59.png" type="Texture" id=60]
 [ext_resource path="res://Animations/dark_room_60.png" type="Texture" id=61]
 [ext_resource path="res://Scenes/protagonist.tscn" type="PackedScene" id=62]
-[ext_resource path="res://Scenes/replaceColor.tres" type="Material" id=63]
+[ext_resource path="res://Themes/replaceColor.tres" type="Material" id=63]
 [ext_resource path="res://Scenes/DialogBox.tscn" type="PackedScene" id=64]
 
 [sub_resource type="SpriteFrames" id=1]

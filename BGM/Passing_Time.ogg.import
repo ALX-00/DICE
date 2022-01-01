@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Passing_Time.ogg-2ccf754bc5faae04e24c7fbd15e4edf6.oggstr"
+
+[deps]
+
+source_file="res://BGM/Passing_Time.ogg"
+dest_files=[ "res://.import/Passing_Time.ogg-2ccf754bc5faae04e24c7fbd15e4edf6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

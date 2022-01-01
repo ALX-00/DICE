@@ -1,7 +1,7 @@
 extends AnimatedSprite
-onready var mindBox = get_owner().get_node("mindBox/Area2D/AnimatedSprite/Label")
+onready var mindBox = get_owner().get_node("mindBox/Area2D/MindSprite/Label")
 onready var mindCloud = get_owner().get_node("mindBox")
-onready var mindSprite = get_owner().get_node("mindBox/Area2D/AnimatedSprite")
+onready var mindSprite = get_owner().get_node("mindBox/Area2D/MindSprite")
 
 # Declare member variables here. Examples:
 # var a = 2
