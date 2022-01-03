@@ -1,10 +1,6 @@
 extends Panel
 const LoadTextFile = preload("res://Scripts/LoadTextFile.gd")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 onready var dialogText = get_node("DialogText")
 onready var textArray
 onready var count = 0
@@ -28,5 +24,6 @@ func _on_Panel_gui_input(event):
 			count += 1
 		else:
 			print("No hay más elementos en la lista.\n")
+			
 		dialogText.text = textArray[count]
 	pass # Replace with function body.

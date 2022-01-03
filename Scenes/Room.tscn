@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/AnimatedSprite.gd" type="Script" id=1]
 [ext_resource path="res://Animations/Anim00_00004.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Animations/Anim01_00002.png" type="Texture" id=13]
 [ext_resource path="res://Animations/Anim02_00004.png" type="Texture" id=14]
 [ext_resource path="res://Animations/Anim02_00002.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/Room.gd" type="Script" id=16]
 [ext_resource path="res://Animations/Anim01_00006.png" type="Texture" id=18]
 [ext_resource path="res://Animations/Anim04_00004.png" type="Texture" id=19]
 [ext_resource path="res://Animations/Anim04_00006.png" type="Texture" id=20]
@@ -22,9 +23,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 4 ) ],
 "loop": true,
-"name": "Desk",
+"name": "Bed",
 "speed": 6.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 3 ), ExtResource( 18 ) ],
@@ -32,23 +33,24 @@ animations = [ {
 "name": "Door",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "Bed",
-"speed": 6.0
+"name": "Static",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "Window",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "Static",
-"speed": 5.0
+"name": "Desk",
+"speed": 6.0
 } ]
 
 [node name="Room" type="Node2D"]
+script = ExtResource( 16 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 960.424, 542.78 )
@@ -84,12 +86,17 @@ polygon = PoolVector2Array( 1390.72, 925.107, 1382.25, 658.11, 1347, 658.123, 13
 position = Vector2( 839.58, 264.004 )
 stream = ExtResource( 22 )
 autoplay = true
+max_distance = 350.0
+attenuation = 0.840897
 
 [node name="Protag" parent="." instance=ExtResource( 5 )]
 
 [node name="DialogBox" parent="." instance=ExtResource( 6 )]
 visible = false
 position = Vector2( 0, 6 )
+
+[node name="AnimatedSprite" parent="DialogBox/Panel" index="0"]
+frame = 2
 
 [node name="mindBox" parent="." instance=ExtResource( 10 )]
 position = Vector2( -371, -314 )
@@ -99,6 +106,7 @@ position = Vector2( 960, 542 )
 stream = ExtResource( 11 )
 volume_db = -5.0
 autoplay = true
+max_distance = 650.0
 
 [connection signal="input_event" from="AnimatedSprite/Area_window" to="AnimatedSprite" method="windowIsClicked"]
 [connection signal="mouse_entered" from="AnimatedSprite/Area_window" to="AnimatedSprite" method="_on_Area_window_mouse_entered"]
